@@ -1,0 +1,141 @@
+<!-- Sets the document format so the browser displays the login page correctly. -->
+<!DOCTYPE html>
+<!-- The login page's content is written in English. -->
+<html lang="en">
+<head>
+    <!-- Allows text on the page to display correctly. -->
+    <meta charset="UTF-8">
+    <!-- Keeps the login panel sized and readable on phone screens. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Text displayed in the browser tab. -->
+    <title>Login</title>
+    <!-- Page styling: controls the colors, spacing, and appearance of the login UI. -->
+    <style>
+        /* Keeps element dimensions predictable so the panel and fields fit their layout. */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Page background and layout: a light canvas with the login panel centered. */
+        body {
+            /* Fills the screen so the panel can sit in the visual center. */
+            min-height: 100vh;
+            /* Removes default spacing around the page. */
+            margin: 0;
+            /* Centers the login panel horizontally and vertically. */
+            display: grid;
+            place-items: center;
+            /* Leaves a small gutter around the panel on narrow screens. */
+            padding: 24px;
+            /* Uses a simple, readable font throughout the page. */
+            font-family: Arial, sans-serif;
+            /* Light gray background and dark text provide clear contrast. */
+            background: #f1f5f9;
+            color: #1e293b;
+        }
+
+        /* Login panel: the white rounded card containing the heading and form. */
+        .login-card {
+            /* Makes the card fit small screens while keeping it compact on larger ones. */
+            width: 100%;
+            max-width: 380px;
+            /* Creates comfortable space around the content inside the card. */
+            padding: 32px;
+            /* Makes the card stand out using a white surface, rounded corners, and soft shadow. */
+            background: #fff;
+            border-radius: 12px;
+            box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+        }
+
+        /* Main title at the top of the login card. */
+        h1 {
+            /* Places a small gap between the title and the instruction. */
+            margin: 0 0 8px;
+            /* Aligns the title with the center of the card. */
+            text-align: center;
+        }
+
+        /* Muted instruction text directly below the title. */
+        .intro {
+            /* Separates the instruction from the first form field. */
+            margin: 0 0 24px;
+            /* Centers the instruction and makes it less prominent than the title. */
+            text-align: center;
+            color: #64748b;
+        }
+
+        /* Field labels identify what information belongs in each input. */
+        label {
+            /* Puts each label on its own line above its input. */
+            display: block;
+            /* Adds a little breathing room around each label. */
+            margin: 16px 0 6px;
+            /* Makes labels easier to distinguish from entered text. */
+            font-weight: bold;
+        }
+
+        /* Email and password boxes: full-width fields with a subtle outline. */
+        input {
+            width: 100%;
+            padding: 11px 12px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            /* Matches the field text to the rest of the page. */
+            font: inherit;
+        }
+
+        /* Blue focus ring shows which input is currently selected. */
+        input:focus {
+            outline: 2px solid #2563eb;
+            outline-offset: 1px;
+        }
+
+        /* Primary action button at the bottom of the login form. */
+        button {
+            width: 100%;
+            /* Leaves a clear gap between the password field and the button. */
+            margin-top: 22px;
+            padding: 12px;
+            /* Gives the button a clean blue appearance with rounded corners. */
+            border: 0;
+            border-radius: 6px;
+            background: #2563eb;
+            color: #fff;
+            /* Makes the button label match the page font and stand out. */
+            font: inherit;
+            font-weight: bold;
+            /* Indicates that the button is clickable. */
+            cursor: pointer;
+        }
+
+        /* Hover feedback: darkens the button while the pointer is over it. */
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Centered login card: holds all the visible sign-in content. -->
+    <main class="login-card">
+        <!-- Large welcome title at the top of the card. -->
+        <h1>Welcome back</h1>
+        <!-- Short supporting message beneath the title. -->
+        <p class="intro">Please sign in to your account.</p>
+        <!-- Sign-in form containing two fields and the primary action button. -->
+        <form action="#" method="post">
+            <!-- Label shown above the email field. -->
+            <label for="email">Email address</label>
+            <!-- Email entry box. -->
+            <input type="email" id="email" name="email" autocomplete="email" required>
+
+            <!-- Label shown above the password field. -->
+            <label for="password">Password</label>
+            <!-- Password entry box; typed characters are hidden. -->
+            <input type="password" id="password" name="password" autocomplete="current-password" required>
+
+            <!-- Blue primary action button for submitting the sign-in form. -->
+            <button type="submit">Log in</button>
+        </form>
+    </main>
+</body>
+</html>
